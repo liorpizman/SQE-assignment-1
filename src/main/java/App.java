@@ -10,6 +10,7 @@ public class App {
         this.commands = new Commands(this.webCrawler.getNames());
         /* test cases */
 //        LinkedList<String> test = new LinkedList<String>();
+//        test.add("yosSi");
 //        test.add("Assaf");
 //        test.add("Yarden");
 //        this.commands = new Commands(test);
@@ -19,6 +20,7 @@ public class App {
         App app = new App();
         //app.commands.CountSpecificString("write-your-substring");
         //app.commands.CountAllStrings(2);
-        app.commands.CountMaxString(1);
+        //app.commands.CountMaxString(1);
+        //app.commands.AllIncludesString("asdasdadassafssdgfyOSsigd");
     }
 }

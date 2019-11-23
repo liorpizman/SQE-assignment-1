@@ -22,7 +22,7 @@ public class Commands {
      */
     public void CountSpecificString(String substring) {
         int countInstances = 0;
-        for (String name : names) {
+        for (String name : this.names) {
             countInstances = name.contains(substring) ? countInstances + 1 : countInstances;
         }
         System.out.println(countInstances);
@@ -48,7 +48,7 @@ public class Commands {
      */
     private void updateStringsMap(int length, boolean capitalLettersCase) {
         this.stringsMap = new HashMap<String, Integer>();
-        for (String name : names) {
+        for (String name : this.names) {
             countSubstringsInstances(name, length, capitalLettersCase);
         }
     }
@@ -124,11 +124,17 @@ public class Commands {
 
     /**
      * Command 4 -
-     *
-     * @param str
+     * prints all names which are included in the input string without reference to capital letters
+     * @param string input string to check
      */
-    public void AllIncludesString(String str) {
-        System.out.println();
+    public void AllIncludesString(String string) {
+        String lowerInput = string.toLowerCase();
+        for(String name : this.names){
+            String lowerCaseName = name.toLowerCase();
+            if (lowerInput.contains(lowerCaseName)){
+                System.out.println(lowerCaseName);
+            }
+        }
     }
 
     /**
