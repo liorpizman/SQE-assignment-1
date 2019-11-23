@@ -24,18 +24,33 @@ public class WebCrawler {
     public WebCrawler() {
         this.names = new LinkedList<String>();
         this.letterLinks = new LinkedList<String>();
-        runCrawler();
+        runParser();
     }
 
-    private void runCrawler() {
+    /**
+     * The parser running by two steps: first updates all letter links to a list
+     * and then updates all names to another list
+     */
+    private void runParser() {
         updateLinks();
         updateAllNames();
+    }
+
+    public LinkedList<String> getNames() {
+        return this.names;
     }
 
     public boolean isLetterLinksEmpty() {
         return this.letterLinks == null || this.letterLinks.size() == 0;
     }
 
+    /**
+     * Returns all elements which where selected by a css query
+     *
+     * @param url       - page to select from
+     * @param selectDiv - css query
+     * @return selected elements
+     */
     public Elements selectDivFromPage(String url, String selectDiv) {
         Elements selectedElements = null;
         try {
@@ -47,6 +62,11 @@ public class WebCrawler {
         return selectedElements;
     }
 
+    /**
+     * Updates all names for a specific letter
+     *
+     * @param namesOnPage - page's elements to scan
+     */
     public void updateCurrentLetterNames(Elements namesOnPage) {
         String currentName;
         for (int i = 0; i < namesOnPage.size(); i++) {
@@ -55,6 +75,9 @@ public class WebCrawler {
         }
     }
 
+    /**
+     * Updates all names for all the letters
+     */
     public void updateAllNames() {
         if (!isLetterLinksEmpty()) {
             for (String letterLink : letterLinks) {
@@ -64,16 +87,13 @@ public class WebCrawler {
         }
     }
 
+    /**
+     * Updates all links to all letters
+     */
     public void updateLinks() {
         Elements linksOnPage = selectDivFromPage(URL, DIV_LETTER_LINKS);
         for (Element link : linksOnPage.select(A_HREF)) {
             letterLinks.add(link.attr(ABS_HREF));
         }
-    }
-
-    public static void main(String[] args) {
-        System.out.println("-------------------------start------------------------------------------");
-        WebCrawler webCrawl = new WebCrawler();
-        System.out.println("-------------------------end------------------------------------------");
     }
 }
