@@ -11,12 +11,13 @@ public class App {
         /* test cases */
 //        LinkedList<String> test = new LinkedList<String>();
 //        test.add("Assaf");
-//        test.add("YaAsSrden");
+//        test.add("YafAsSrden");
 //        this.commands = new Commands(test);
     }
 
     public static void main(String[] args) {
         App app = new App();
-        app.commands.CountSpecificString("write-your-substring");
+        //app.commands.CountSpecificString("write-your-substring");
+        //app.commands.CountAllStrings(2);
     }
 }
