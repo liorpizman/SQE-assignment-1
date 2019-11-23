@@ -11,7 +11,7 @@ public class App {
         /* test cases */
 //        LinkedList<String> test = new LinkedList<String>();
 //        test.add("Assaf");
-//        test.add("YafAsSrden");
+//        test.add("Yarden");
 //        this.commands = new Commands(test);
     }
 
@@ -19,5 +19,6 @@ public class App {
         App app = new App();
         //app.commands.CountSpecificString("write-your-substring");
         //app.commands.CountAllStrings(2);
+        app.commands.CountMaxString(1);
     }
 }
