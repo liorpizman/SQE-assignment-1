@@ -5,12 +5,12 @@ import java.util.LinkedList;
 
 public class Commands {
 
-    private LinkedList<String> names;
+    private HashSet<String> names;
     private HashMap<String, Integer> stringsMap;
     private HashSet<String> maxEntries;
     private HashMap.Entry<String, Integer> maxEntry;
 
-    public Commands(LinkedList<String> names) {
+    public Commands(HashSet<String> names) {
         this.names = names;
     }
 
