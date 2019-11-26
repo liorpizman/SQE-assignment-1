@@ -20,7 +20,7 @@ public class App {
         App app = new App();
         //app.commands.CountSpecificString("write-your-substring");
         //app.commands.CountAllStrings(2);
-        //app.commands.CountMaxString(1);
+        app.commands.CountMaxString(1);
         //app.commands.AllIncludesString("asdasdadassafssdgfyOSsigd");
     }
 }
