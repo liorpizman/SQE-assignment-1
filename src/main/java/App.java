@@ -22,5 +22,6 @@ public class App {
         //app.commands.CountAllStrings(2);
         //app.commands.CountMaxString(1);
         //app.commands.AllIncludesString("asdasdadassafssdgfyOSsigd");
+        app.commands.GenerateName();
     }
 }
