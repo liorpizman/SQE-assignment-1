@@ -9,7 +9,7 @@ public class App {
         this.webCrawler = new WebCrawler();
         this.commands = new Commands(this.webCrawler.getNames());
         /* test cases */
-//        LinkedList<String> test = new LinkedList<String>();
+//        HashSet<String> test = new HashSet<String>();
 //        test.add("yosSi");
 //        test.add("Assaf");
 //        test.add("Yarden");
